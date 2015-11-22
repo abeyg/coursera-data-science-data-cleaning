@@ -7,10 +7,14 @@ This is the code book of the tidy dataset, which is the output of the run_analys
 Source of the input data is "Human Activity Recognition Using Smartphones Data Set".
 It's available here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-## Schema Description of Output Tidy data
+## Output Tidy data
+The output contains 180 rows and the variables are labelled.  
+180 rows represents the average of all mean std variables for 30 subjects times 6 activity
+
+## Schema Description of Output data
 
 Subject: ID of the subject from the study.  
-Activity: the string activity name, which is one of the following 6 activity names.  
+Activity: the string activity name, which is one of the following 6 activity names.    
              WALKING  
              WALKING UPSTAIRS  
              WALKING DOWNSTAIRS  
