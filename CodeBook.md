@@ -9,8 +9,8 @@ It's available here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recog
 
 ## Schema Description of Output Tidy data
 
-1. Subject: ID of the subject from the study.
-2. Activity: the string activity name, which is one of the following 6 activity names.
+Subject: ID of the subject from the study.
+Activity: the string activity name, which is one of the following 6 activity names.
              WALKING  
              WALKING UPSTAIRS  
              WALKING DOWNSTAIRS  
@@ -18,7 +18,7 @@ It's available here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recog
              STANDING  
              LAYING  
 
-Varibales 3 to 81 are the average of the corresponding feature selection variables from the source data set (selected from the mean and standard deviation) for each subject and activity combination.
+Varibales 3 to 81 979 variables) are the average of the corresponding feature selection variables from the source data set (selected from the mean and standard deviation) for each subject and activity combination.
 More description of these variables are avaialble in the README.txt, features.txt and features_info.txt files of the original dataset. Not repeating them here.
 Please refer to the above documents for their detailed description.
 
