@@ -9,8 +9,8 @@ It's available here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recog
 
 ## Schema Description of Output Tidy data
 
-Subject: ID of the subject from the study.
-Activity: the string activity name, which is one of the following 6 activity names.
+Subject: ID of the subject from the study.  
+Activity: the string activity name, which is one of the following 6 activity names.  
              WALKING  
              WALKING UPSTAIRS  
              WALKING DOWNSTAIRS  
