@@ -9,15 +9,17 @@
 #### with the average of each variable for each activity and each subject.
 ####
 #### In order to eliminate processing large amounts of unwanted data,
-#### in this implementation, merging the data is done after filtering out
-#### unwanted data, which is done early for performance reasons.
+#### merging the data is done after filtering out unwanted data,
+#### which is done early for performance reasons.
 
-#### Define all functions first.
+#### Dependency: The script uses data.table and dplyr packages.
 
-#### read and apply the specified processing on the given dataset.
-#### called with 'test' for test data and 'train' for training data.
+#### Define all functions first. the entry point of the script starts at line 54.
+
+#### Read and apply the specified processing on the given dataset.
+#### Called with 'test' for test data and 'train' for training data.
 read_and_process_data <- function (type) {
-    # read and process all relevant data.
+    # read all relevant data.
     X <- read.table(generate_path(type, "X"), sep = "", header = F, stringsAsFactors = F)
     y <- read.table(generate_path(type, "y"), sep = "", header = F, stringsAsFactors = F)
     sub <- read.table(generate_path(type, "subject"), sep = "", header = F, stringsAsFactors = F)
@@ -39,7 +41,7 @@ read_and_process_data <- function (type) {
     cbind(sub, y, X)
 }
 
-#### generate path based on type
+#### Generate path based on type
 generate_path <- function(type, name) {
     paste0(dataPath, "/", type, "/", name,"_", type, ".txt")
 }
@@ -65,33 +67,33 @@ dataPath <- "./UCI HAR Dataset"
 activityLabelsFilename <- "activity_labels.txt" 
 featureFilename <- "features.txt" 
 outputFilename <- "./tidy_data.txt"
-activityLabel <- "activity"
-subjectLabel <- "subject"
+activityLabel <- "Activity"
+subjectLabel <- "Subject"
 
-#### read the feature names
+#### Read the feature names
 features <- read.table(paste0(dataPath, "/", featureFilename), sep = "", header = F, stringsAsFactors = F)
-#### we only need the fetaure names. drop the ids.
+#### We only need the fetaure names. drop the ids.
 features <- features[,2]
 
-#### only extract mean and standard deviation for each measurement.
+#### Only extract mean and standard deviation for each measurement.
 mean_or_std_features <- grepl("mean|std", features)
 features <- features[mean_or_std_features]
 
-#### read the activity labels
+#### Read the activity labels
 activity_labels <- read.table(paste0(dataPath, "/", activityLabelsFilename), sep = "", header = F, stringsAsFactors = F)
-#### we only need the activity names. drop the ids.
+#### We only need the activity names. drop the ids.
 activity_labels <- activity_labels [,2]
 
-#### read and process test and train data
+#### Read and process test and train data
 test_data <- read_and_process_data("test")
 train_data <- read_and_process_data("train")
 
-#### merge training and test
+#### Merge training and test
 merged_data <- rbind(test_data, train_data)
 
-#### generate tidy data as the final output
-tidy_data <- merged_data %>% group_by(subject, activity) %>% summarise_each(funs(mean))
+#### Generate tidy data as the final output
+tidy_data <- merged_data %>% group_by(Subject, Activity) %>% summarise_each(funs(mean))
 
-#### finally save the tidy data
+#### Finally save the tidy data
 write.table(tidy_data, file = outputFilename, row.names = F, sep=",")
 
