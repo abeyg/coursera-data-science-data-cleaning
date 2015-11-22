@@ -98,3 +98,4 @@ tidy_data <- merged_data %>% group_by(Subject, Activity) %>% summarise_each(funs
 #### Finally save the tidy data
 write.table(tidy_data, file = outputFilename, row.names = F, sep=",")
 
+#### End script
