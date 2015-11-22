@@ -104,10 +104,10 @@ Please refer to the above documents for their detailed description.
 
 ## Transformations
 
-These are the transformations applied to the input data to obtain the tidy output, after reading the test and training data, features and activity schema.
-1. Extracts only the measurements on the mean and standard deviation for each measurement. This is done for both the test and training data.
-2. Uses descriptive activity names to name the activities in the data set. This is done for both the test and training data. The activity names are obtained from the activity names input data.
-3. Appropriately labels the data set with descriptive variable names. Used the source variable names for better readability. This is done for both the test and training data.
-4. Merges the training and the test sets to create one data set. Note that this step is done after processing instead of in the beginning purely for performance reasons. Please read the comments in the code for more details.
-5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+These are the transformations applied to the input data to obtain the tidy output, after reading the test and training data, features and activity schema.  
+1. Extracts only the measurements on the mean and standard deviation for each measurement. This is done for both the test and training data.  
+2. Uses descriptive activity names to name the activities in the data set. This is done for both the test and training data. The activity names are obtained from the activity names input data.  
+3. Appropriately labels the data set with descriptive variable names. Used the source variable names for better readability. This is done for both the test and training data.  
+4. Merges the training and the test sets to create one data set. Note that this step is done after processing instead of in the beginning purely for performance reasons. Please read the comments in the code for more details.  
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.  
 

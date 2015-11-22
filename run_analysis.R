@@ -1,6 +1,7 @@
-#### creates tidy data from the input by applying various filtering and selection as described in the
+#### Creates tidy data from the input by applying various filtering and selection as described in the
 #### problem definition of the project (which is copied below).
 #### Creates an R script run_analysis.R that does the following:
+####
 #### 1. Merges the training and the test sets to create one data set.
 #### 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 #### 3. Uses descriptive activity names to name the activities in the data set
@@ -11,10 +12,10 @@
 #### In order to eliminate processing large amounts of unwanted data,
 #### merging the data is done after filtering out unwanted data,
 #### which is done early for performance reasons.
-
+####
 #### Dependency: The script uses data.table and dplyr packages.
 
-#### Define all functions first. the entry point of the script starts at line 54.
+#### Define all functions first. the entry point of the script starts at line 56.
 
 #### Read and apply the specified processing on the given dataset.
 #### Called with 'test' for test data and 'train' for training data.
